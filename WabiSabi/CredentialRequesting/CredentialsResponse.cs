@@ -2,6 +2,7 @@ namespace WabiSabi.CredentialRequesting;
 
 using Crypto;
 using Crypto.ZeroKnowledge;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Represents a response message for the WabiSabi unified registration protocol.
@@ -13,6 +14,7 @@ using Crypto.ZeroKnowledge;
 /// </remarks>
 public class CredentialsResponse
 {
+	[JsonConstructor]
 	public CredentialsResponse(IEnumerable<MAC> issuedCredentials, IEnumerable<Proof> proofs)
 	{
 		IssuedCredentials = issuedCredentials;

@@ -12,6 +12,11 @@ public class ImmutableValueSequence<T> : IEnumerable<T>, IEquatable<ImmutableVal
 {
 	private readonly ImmutableArray<T> _elements;
 
+	public ImmutableValueSequence()
+	{
+		_elements = ImmutableArray<T>.Empty;
+	}
+
 	public ImmutableValueSequence(IEnumerable<T> sequence)
 	{
 		_elements = sequence.ToImmutableArray();

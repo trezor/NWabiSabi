@@ -1,6 +1,7 @@
 namespace WabiSabi.Crypto.ZeroKnowledge;
 
 using NBitcoin.Secp256k1;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ public sealed class Transcript
 {
 	private const int KeySizeInBytes = 32;
 
+	[JsonProperty("strobe")]
 	private Strobe128 _strobe;
 
 	private static readonly byte[] StatementTag = Encoding.UTF8.GetBytes("statement");
@@ -41,6 +43,7 @@ public sealed class Transcript
 	}
 
 	// Private constructor used for cloning.
+	[JsonConstructor]
 	private Transcript(Strobe128 strobe)
 	{
 		_strobe = strobe;

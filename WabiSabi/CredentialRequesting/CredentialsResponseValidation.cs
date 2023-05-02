@@ -2,6 +2,7 @@ namespace WabiSabi.CredentialRequesting;
 
 using Crypto;
 using Crypto.ZeroKnowledge;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Maintains the state needed to validate the credentials once the coordinator
@@ -9,6 +10,7 @@ using Crypto.ZeroKnowledge;
 /// </summary>
 public record CredentialsResponseValidation
 {
+	[JsonConstructor]
 	internal CredentialsResponseValidation(
 		Transcript transcript,
 		IEnumerable<Credential> presented,
@@ -22,6 +24,7 @@ public record CredentialsResponseValidation
 	/// <summary>
 	/// The transcript in the correct state that must be used to validate the proofs presented by the coordinator.
 	/// </summary>
+	[JsonProperty("transcript")]
 	internal Transcript Transcript { get; }
 
 	/// <summary>
