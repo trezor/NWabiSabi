@@ -24,7 +24,7 @@ public record CredentialsResponseValidation
 	/// <summary>
 	/// The transcript in the correct state that must be used to validate the proofs presented by the coordinator.
 	/// </summary>
-	[JsonProperty("transcript")]
+	[JsonProperty("Transcript")]
 	internal Transcript Transcript { get; }
 
 	/// <summary>

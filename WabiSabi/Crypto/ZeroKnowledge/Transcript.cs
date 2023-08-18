@@ -17,7 +17,7 @@ public sealed class Transcript
 {
 	private const int KeySizeInBytes = 32;
 
-	[JsonProperty("strobe")]
+	[JsonProperty("Strobe")]
 	private Strobe128 _strobe;
 
 	private static readonly byte[] StatementTag = Encoding.UTF8.GetBytes("statement");

@@ -16,16 +16,16 @@ public sealed class Strobe128
 	// Let ˆr=r/8−2. This is the portion of the rate which is used for user data, measured in bytes.
 	private const byte SpongeRate = 166;
 
-	[JsonProperty("state")]
+	[JsonProperty("State")]
 	private readonly byte[] _state = new byte[25 * 8]; // this is the block size used by keccak-f1600.
 
-	[JsonProperty("position")]
+	[JsonProperty("Position")]
 	private byte _position = 0;
 
-	[JsonProperty("beginPosition")]
+	[JsonProperty("BeginPosition")]
 	private byte _beginPosition = 0;
 
-	[JsonProperty("currentFlags")]
+	[JsonProperty("CurrentFlags")]
 	private StrobeFlags _currentFlags = 0;
 
 	public Strobe128(string procotol)
